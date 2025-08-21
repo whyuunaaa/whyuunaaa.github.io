@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Pagi, Tersayang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#ffecd2;
+      --bg2:#fcb69f;
+      --bg3:#c9ffbf;
+      --bg4:#ffafbd;
+      --shadow: 0 10px 35px rgba(0,0,0,.14);
+    }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    html,body{
+      height:100%;
+      width:100%;
+      overflow:hidden;
+    }
+    body{
+      font-family:'Quicksand', sans-serif;
+      color:#2b2b2b;
+      background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3), var(--bg4));
+      background-size: 300% 300%;
+      animation: gradientShift 16s ease infinite;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    @keyframes gradientShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    .card{
+      width:95%;
+      max-width:600px;
+      background:rgba(255,255,255,0.25);
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.35);
+      backdrop-filter: blur(10px);
+      border-radius:24px;
+      padding: 28px;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    h1{
+      margin-bottom:.5rem;
+      font-family:'Playfair Display', serif;
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      line-height:1.2;
+      font-weight:700;
+    }
+    .gradient-text{
+      background: linear-gradient(90deg,#ff6cab,#7366ff,#2bb2ff,#00d4a6);
+      background-size:200% auto;
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      animation: hue 8s ease-in-out infinite;
+      display:inline-block;
+    }
+    @keyframes hue{
+      0%{background-position:0%}
+      50%{background-position:100%}
+      100%{background-position:0%}
+    }
+
+    .subtitle{
+      font-size: clamp(1rem, 3.8vw, 1.25rem);
+      opacity:.92;
+      margin-bottom: 1rem;
+      white-space:nowrap;
+    }
+
+    .words{
+      display:inline-block;
+      position:relative;
+      height:1.4em;
+      overflow:hidden;
+    }
+    .words span{
+      position:absolute;
+      width:100%;
+      left:0;
+      top:100%;
+      opacity:0;
+      animation: slideUp 10s infinite;
+    }
+    .words span:nth-child(1){animation-delay:0s}
+    .words span:nth-child(2){animation-delay:2.5s}
+    .words span:nth-child(3){animation-delay:5s}
+    .words span:nth-child(4){animation-delay:7.5s}
+    @keyframes slideUp{
+      0%{top:100%; opacity:0}
+      6%{top:0%; opacity:1}
+      22%{top:0%; opacity:1}
+      28%{top:-120%; opacity:0}
+      100%{opacity:0}
+    }
+
+    .floaters{position:absolute; inset:0; pointer-events:none; overflow:hidden;}
+    .heart{
+      position:absolute; bottom:-10vh; width:14px; aspect-ratio:1;
+      transform: rotate(45deg);
+      opacity:.6;
+      animation: rise var(--t) linear infinite;
+    }
+    .heart::before,.heart::after{
+      content:"";
+      position:absolute;
+      width:100%; height:100%;
+      background:#ff5c8a;
+      border-radius:50%;
+    }
+    .heart::before{ top:-50%; left:0 }
+    .heart::after{ left:-50%; top:0 }
+    @keyframes rise{to{transform:translateY(-120vh) rotate(45deg)}}
+
+    .heart:nth-child(1){left:5%; --t:18s;}
+    .heart:nth-child(2){left:15%; --t:22s}
+    .heart:nth-child(3){left:25%; --t:16s}
+    .heart:nth-child(4){left:35%; --t:24s}
+    .heart:nth-child(5){left:45%; --t:20s}
+    .heart:nth-child(6){left:55%; --t:17s}
+    .heart:nth-child(7){left:65%; --t:26s}
+    .heart:nth-child(8){left:75%; --t:19s}
+    .heart:nth-child(9){left:85%; --t:23s}
+    .heart:nth-child(10){left:92%; --t:21s}
+
+    footer{ margin-top:1rem; font-size:.85rem; opacity:.8 }
+    .btn{
+      display:inline-block;
+      padding:.6rem 1rem;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.6);
+      background:rgba(255,255,255,.55);
+      text-decoration:none;
+      color:#1d1d1f;
+      font-weight:700;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+      transition: transform .25s ease, background .25s ease;
+      backdrop-filter: blur(6px);
+    }
+    .btn:hover{transform:translateY(-2px); background:rgba(255,255,255,.8)}
+    
+.image-container {
+  display: flex; /* Menggunakan flexbox */
+  justify-content: center; /* Menengahkan secara horizontal */
+  align-items: center; /* Menengahkan secara vertikal */
+  height: 150px; /* Tinggi kontainer (sesuaikan kebutuhan) */
+  /* Anda bisa menambahkan background, border, dll. di sini */
+}
+
+.gambar-bulat {
+  width: 100px; /* Ukuran lebar gambar (sesuaikan kebutuhan) */
+  height: 100px; /* Ukuran tinggi gambar (sesuaikan kebutuhan) */
+  border-radius: 50%; /* Membuat gambar bulat */
+  object-fit: cover; /* Memastikan gambar tidak terdistorsi dan mengisi ruang */
+  /* Jika menggunakan gambar dengan background-image di div */
+  /* background-image: url('nama_file_gambar.jpg'); */
+  /* background-size: cover; */
+  /* background-position: center; */
+}
+  </style>
+</head>
+<body>
+  <div class="card">
+<div class="image-container">
+  <img src="4.jpg" alt="Deskripsi Gambar" class="gambar-bulat">
+</div>
+    <h1>Selamat Pagi, <br><span class="gradient-text">mba nana</span></h1>
+    <p class="subtitle">Comel, cantik, manis<span class="words">
+      <span>hangat</span>
+      <span>lembut</span>
+      <span>cerah</span>
+      <span>penuh cinta</span>
+    </span></p>
+    <p>Mass mau bilang, Sehat" sayang, sayang ade, jangan lupa senyumnya dibanyakin, Semangat ya, wopyu.</p>
+    <footer>
+      <a class="btn" href="https://www.instagram.com/nanaaanartna?igsh=MWp6enAycnB4eXFuYw==">@nanaaanartna</a>
+            <a class="btn" href="https://www.instagram.com/whyuuuya?igsh=Z2w5YndwaG0xZnNx">@whyuuuya</a>
+    </footer>
+  </div>
+
+  <div class="floaters" aria-hidden="true">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+
+  <script>
+    document.querySelector('.btn')?.addEventListener('click', function(){
+      if(!navigator.share){
+        const text = 'Sehat" sayang, sayang ade, jangan lupa senyumnya dibanyakin, Semangat ya, wopyu.';
+        navigator.clipboard?.writeText(text);
+      }
+    });
+  </script>
+</body>
+</html>
